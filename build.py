@@ -9,6 +9,7 @@ import sys
 import shutil
 import subprocess
 import logging
+import glob
 from pathlib import Path
 import argparse
 import json
@@ -266,11 +267,17 @@ class AppBuilder:
         }
     
     def clean(self):
-        """Clean build and dist directories."""
+        """Clean build and dist directories and .spec files."""
+        # Clean directories
         for directory in [self.config.config['build_dir'], self.config.config['dist_dir']]:
             if os.path.exists(directory):
                 shutil.rmtree(directory)
                 logger.info(f"Cleaned {directory} directory")
+        
+        # Clean .spec files
+        for spec_file in glob.glob("*.spec"):
+            os.remove(spec_file)
+            logger.info(f"Removed {spec_file}")
     
     def prepare_platform_specific(self):
         """Prepare platform-specific build requirements."""
