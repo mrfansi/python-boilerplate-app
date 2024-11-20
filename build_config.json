@@ -1,0 +1,40 @@
+{
+    "base": {
+        "app_name": "YourApp",
+        "version": "1.0.0",
+        "main_script": "main.py",
+        "build_dir": "build",
+        "dist_dir": "dist",
+        "additional_data": [],
+        "hidden_imports": [],
+        "exclude_modules": [],
+        "company": {
+            "name": "Your Company",
+            "copyright": "Copyright (c) Your Company",
+            "description": "Your application description",
+            "product_name": "Your Product Name",
+            "trademark": "Your Company\u2122",
+            "author": "Your Name",
+            "url": "https://yourcompany.com"
+        }
+    },
+    "windows": {
+        "icon_file": "icons/app_icon.ico",
+        "console": false,
+        "admin_access": false,
+        "uac_admin": false,
+        "version_file": "version.txt"
+    },
+    "macos": {
+        "icon_file": "icons/app_icon.icns",
+        "bundle_identifier": "com.example.yourapp",
+        "entitlements_file": "entitlements.plist",
+        "info_plist": "Info.plist"
+    },
+    "linux": {
+        "icon_file": "icons/app_icon.png",
+        "console": false,
+        "desktop_file": "app.desktop",
+        "categories": "Utility;"
+    }
+}
